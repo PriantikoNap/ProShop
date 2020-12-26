@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(detailProducts(match.params.id))
@@ -76,6 +76,7 @@ const ProductScreen = ({ history, match }) => {
                       <Col>Qty :</Col>
                       <Col>
                         <Form.Control
+                          style={{ width: 'unset' }}
                           as="select"
                           value={qty}
                           onChange={(e) => setQty(e.target.value)}
